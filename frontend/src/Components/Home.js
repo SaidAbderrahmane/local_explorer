@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import apiClient from "../api/apiClient"; // Adjust the path as necessary
+import apiClient from "../api/apiClient"; 
 import "swiper/css";
 
 const Home = () => {
