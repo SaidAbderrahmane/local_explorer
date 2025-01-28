@@ -27,7 +27,9 @@ Local Explorer uses the Gemini1.5-flash AI model, Google Maps API, and OpenWeath
 
 ## Screenshots
 
-![Screenshot of Local Explorer](https://raw.githubusercontent.com/micahstern/local-explorer/master/screenshots/local-explorer-screenshot.png)
+![Screenshot of Local Explorer login page](docs/login_page.png)
+![Screenshot of Local Explorer signup page](docs/signup_page.png)
+![Screenshot of Local Explorer home page](docs/home_page.png)
 
 ## Installation
 
