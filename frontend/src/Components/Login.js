@@ -83,12 +83,12 @@ export default function Login() {
         </div>
       )}
 
-      <div className="max-w-md w-full space-y-8 bg-gray-900  backdrop-blur-sm p-10 rounded-xl shadow-2xl relative z-10">
+      <div className="max-w-md w-full space-y-8 bg-white  backdrop-blur-sm p-10 rounded-xl shadow-2xl relative z-10">
         <div className="text-center">
-          <h2 className="mt-6 text-4xl font-extrabold text-gray-200 tracking-tight">
+          <h2 className="mt-6 text-4xl font-extrabold text-gray-800 tracking-tight">
             Welcome to Local Explorer
           </h2>
-          <p className="mt-2 text-sm text-gray-300">
+          <p className="mt-2 text-sm text-gray-600">
             Please sign in to discover activities near you
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function Login() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-400"
+                className="block text-sm font-medium text-gray-700"
               >
                 email
               </label>
@@ -105,7 +105,7 @@ export default function Login() {
                 <input
                   type="text"
                   id="email"
-                  className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                  className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent transition duration-150 ease-in-out"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
@@ -116,7 +116,7 @@ export default function Login() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-400"
+                className="block text-sm font-medium text-gray-700"
               >
                 Password
               </label>
@@ -124,7 +124,7 @@ export default function Login() {
                 <input
                   type="password"
                   id="password"
-                  className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                  className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent transition duration-150 ease-in-out"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
@@ -140,17 +140,17 @@ export default function Login() {
 
           <button
             type="submit"
-            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out transform hover:-translate-y-0.5"
+            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-gray-800 bg-gray-300 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition duration-150 ease-in-out transform hover:-translate-y-0.5"
           >
             Sign In
           </button>
 
           <div className="flex items-center justify-center mt-6">
             <div className="text-sm">
-              <span className="text-gray-500">Don't have an account?</span>{" "}
+              <span className="text-gray-700">Don't have an account?</span>{" "}
               <Link
                 to="/signup"
-                className="font-medium text-blue-600 hover:text-blue-500 transition duration-150 ease-in-out"
+                className="font-medium text-gray-800 hover:text-gray-700 transition duration-150 ease-in-out"
               >
                 Sign up now
               </Link>

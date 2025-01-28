@@ -128,8 +128,8 @@ const Home = () => {
 
       {/* Loading State */}
       {loading && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yellow-100 text-yellow-800 p-4 rounded-lg shadow-lg flex items-center space-x-2">
-          <svg className="animate-spin h-5 w-5 text-yellow-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-gray-800 p-4 rounded-lg shadow-lg flex items-center space-x-2">
+          <svg className="animate-spin h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 2.042.784 3.907 2.074 5.291l3.926-2z"></path>
           </svg>
@@ -143,7 +143,7 @@ const Home = () => {
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
           onClick={getActivities}
         >
-          Explore!
+          Let's Explore!
         </button>
       </div>
 

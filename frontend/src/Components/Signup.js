@@ -97,12 +97,12 @@ export default function Signup() {
         </div>
       )}
 
-      <div className="max-w-md w-full space-y-8 bg-gray-900 backdrop-blur-sm p-10 rounded-xl shadow-2xl relative z-10">
+      <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-2xl relative z-10">
         <div className="text-center">
-          <h2 className="mt-6 text-4xl font-extrabold text-gray-200 tracking-tight">
+          <h2 className="mt-6 text-4xl font-extrabold text-gray-800 tracking-tight">
             Welcome to Local Explorer
           </h2>
-          <p className="mt-2 text-sm text-gray-300">
+          <p className="mt-2 text-sm text-gray-600">
             Join Local Explorer and Start Your Adventure
           </p>
         </div>
@@ -111,7 +111,7 @@ export default function Signup() {
             <div>
               <label
                 htmlFor="username"
-                className="block text-sm font-medium text-gray-400"
+                className="block text-sm font-medium text-gray-700"
               >
                 Username
               </label>
@@ -130,7 +130,7 @@ export default function Signup() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-400"
+                className="block text-sm font-medium text-gray-700"
               >
                 Email
               </label>
@@ -149,7 +149,7 @@ export default function Signup() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-400"
+                className="block text-sm font-medium text-gray-700"
               >
                 Password
               </label>
@@ -168,7 +168,7 @@ export default function Signup() {
             <div>
               <label
                 htmlFor="confirmPassword"
-                className="block text-sm font-medium text-gray-400"
+                className="block text-sm font-medium text-gray-700"
               >
                 Confirm Password
               </label>
@@ -192,7 +192,7 @@ export default function Signup() {
 
           <button
             type="submit"
-            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out transform hover:-translate-y-0.5"
+            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-gray-800 bg-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition duration-150 ease-in-out transform hover:-translate-y-0.5"
           >
             Sign Up
           </button>
@@ -202,7 +202,7 @@ export default function Signup() {
               <span className="text-gray-600">Already have an account?</span>{" "}
               <Link
                 to="/login"
-                className="font-medium text-blue-600 hover:text-blue-500 transition duration-150 ease-in-out"
+                className="font-medium text-gray-600 hover:text-gray-500 transition duration-150 ease-in-out"
               >
                 Sign in now
               </Link>
