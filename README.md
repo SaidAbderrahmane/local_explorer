@@ -21,9 +21,7 @@ Local Explorer uses the Gemini1.5-flash AI model, Google Maps API, and OpenWeath
 
 * Get activity suggestions based on your location, the current weather, and the time of day
 * View suggestions on a map
-* Filter suggestions by type (e.g. outdoor, indoor, food, etc.)
-* View detailed information about each suggestion, including address, phone number, and hours of operation
-* Get walking directions to each suggestion
+* View detailed information about each suggestion
 
 ## Screenshots
 
@@ -54,6 +52,7 @@ Local Explorer uses the following APIs:
 
 ## TODO
 
-* Add the ability to filter activities categories
+* Add the ability to filter activities by type and categories
 * Add the ability to favorite suggestions
+* Add the ability to get walking directions to each suggestion
 * Add the ability to share suggestions with friends
