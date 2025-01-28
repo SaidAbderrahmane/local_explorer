@@ -28,8 +28,9 @@ const getSuggestsionsJson = async (location, weather, timeOfDay) => {
     2. Factor in the **time of day** to suggest activities that align with morning, afternoon, evening, or night preferences.
     3. Where possible, include a **short explanation** of why each activity is suitable for the given weather and time.
     4. Keep the suggestions diverse (e.g., a mix of physical, social, relaxing, or cultural activities), ensuring they appeal to a wide audience.
-    `;
-    
+    5. No in house activities, all activities should be outside the house.
+    6. Read the last part of the address carefully,  pay attention to the country name.`;
+
     const schema = {
         description: "List of activities",
         type: SchemaType.ARRAY,
