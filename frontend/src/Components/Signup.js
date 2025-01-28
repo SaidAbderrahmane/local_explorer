@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { baseURL } from "../api/apiClient";
+import { useAuth } from '../auth/AuthContext'; 
+
 
 export default function Signup() {
   const [username, setUsername] = useState("");
@@ -10,6 +13,7 @@ export default function Signup() {
   const [showModal, setShowModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
 
   const handleSubmit = async (e) => {
@@ -21,7 +25,7 @@ export default function Signup() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/users", {
+      const response = await fetch( baseURL + "/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,8 +42,9 @@ export default function Signup() {
 
       const { token } = await response.json();
 
+
       if (token) {
-        localStorage.setItem("token", token);
+        login(token);
         setShowModal(true);
         setTimeout(() => {
           setShowModal(false);

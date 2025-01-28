@@ -1,8 +1,9 @@
 import axios from "axios";
 
+const baseURL = "http://localhost:5000/api";
 // Create Axios instance
 const apiClient = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: baseURL,
 });
 
 // Add Authorization header if JWT exists
@@ -14,4 +15,5 @@ apiClient.interceptors.request.use((config) => {
   return config;
 });
 
+export { baseURL };
 export default apiClient;

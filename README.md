@@ -10,8 +10,7 @@ A smart activity suggestion app that uses AI to suggest activities based on loca
 * [Installation](#installation)
 * [Usage](#usage)
 * [API](#api)
-* [License](#license)
-* [Contributing](#contributing)
+* [TODO](#todo)
 
 ## About
 
@@ -31,14 +30,25 @@ Local Explorer uses the Gemini1.5-flash AI model, Google Maps API, and OpenWeath
 
 ## Installation
 
+### Backend
+
 1. Clone the repository: `git clone https://github.com/micahstern/local-explorer.git`
-2. Install dependencies: `npm install`
-3. Start the app: `npm start`
-4. Open the app in your browser: `http://localhost:3000`
+2. Move into the backend directory: `cd backend`
+3. Install dependencies: `npm install`
+4. Start the server: `npm run dev`
+5. Open the app in your browser: `http://localhost:3001`
+
+### Frontend
+
+1. Clone the repository: `git clone https://github.com/micahstern/local-explorer.git`
+2. Move into the frontend directory: `cd frontend`
+3. Install dependencies: `npm install`
+4. Start the app: `npm start`
+5. Open the app in your browser: `http://localhost:3000`
 
 ## Usage
 
-1. create an account
+1. Create an account
 2. click the button "Let's Explore!"
 3. View suggestions on the map
 
