@@ -1,7 +1,7 @@
 //importing the services
 const { getWeather } = require('../services/weatherService');
 const { getSuggestions, getSuggestsionsJson } = require('../services/GeminiService');
-const { getAddressFromCoordinates, getLocationFromString } = require('../services/locationService');
+const { getAddressFromCoordinates, getLocationFromString, fetchPlaceDetails } = require('../services/locationService');
 
 
 async function getActivities(req, res){
@@ -17,27 +17,39 @@ async function getActivities(req, res){
       const address = await getAddressFromCoordinates(lat, lon);
       console.log(address);
       const weather = await getWeather(lat, lon);
-      const suggestions = await getSuggestsionsJson(address, weather, currentDateTime );
-      
-      //to review *******
-      const newSuggestions = await Promise.all(suggestions.map(async suggestion => {
+      var suggestions = await getSuggestsionsJson(address, weather, currentDateTime );
+      suggestions = await Promise.all(suggestions.map(async suggestion => {
         try {
-          const location =  await getLocationFromString(suggestion.location);
+          const places = await fetchPlaceDetails(suggestion.activityName, { latitude: lat, longitude: lon });
           return {
             ...suggestion,
-            lat: location.lat,
-            lon: location.lon,
-            gmaps: `https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lon}`,
+            places,
           };
         } catch (error) {
-          console.error(`Error getting location: ${error.message}`);
+          console.error(`Error fetching places for ${suggestion.activityName}: ${error.message}`);
           return suggestion;
         }
       }));
+      
+      //to review *******
+      // const newSuggestions = await Promise.all(suggestions.map(async suggestion => {
+      //   try {
+      //     const location =  await getLocationFromString(suggestion.location);
+      //     return {
+      //       ...suggestion,
+      //       lat: location.lat,
+      //       lon: location.lon,
+      //       gmaps: `https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lon}`,
+      //     };
+      //   } catch (error) {
+      //     console.error(`Error getting location: ${error.message}`);
+      //     return suggestion;
+      //   }
+      // }));
       //*******
       
       
-      res.json({address, weather, newSuggestions });
+      res.json({address, weather, suggestions });
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal Server Error');

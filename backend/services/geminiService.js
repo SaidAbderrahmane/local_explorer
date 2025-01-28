@@ -8,7 +8,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 // AI suggestions based on location, weather, and time
 const getSuggestions = async (location, weather, timeOfDay) => {
     const prompt = `
-      Based on the weather in ${location} (currently ${weather.main.temp}°C and ${weather.weather[0].description}), suggest three activities to do during the ${timeOfDay}.
+      Based on the weather in ${location} (currently ${weather.main.temp}°C and ${weather.weather[0].description}), suggest 5 activities that you can do at ${timeOfDay}.
     `;
     const result = await model.generateContent(prompt);
 
@@ -17,9 +17,19 @@ const getSuggestions = async (location, weather, timeOfDay) => {
 
 const getSuggestsionsJson = async (location, weather, timeOfDay) => {
     const prompt = `
-    Based on the weather in ${location} (currently ${weather.main.temp}°C and ${weather.weather[0].description}), suggest three activities at ${timeOfDay}.
-  `;
-
+    You are an expert activity planner tasked with recommending engaging, practical, and location-specific activities based on the current weather and time of day. 
+    Using the following inputs:
+    - Location: ${location}
+    - Weather: ${weather.main.temp}°C, described as "${weather.weather[0].description}"
+    - Time of Day: ${timeOfDay}
+  
+    Your task is to suggest **exactly 5 unique and creative activities** that are well-suited to the above conditions. Consider the following:
+    1. Ensure the activities are **specific to the weather** (e.g., outdoor or indoor options based on temperature and conditions like rain, snow, or sunshine).
+    2. Factor in the **time of day** to suggest activities that align with morning, afternoon, evening, or night preferences.
+    3. Where possible, include a **short explanation** of why each activity is suitable for the given weather and time.
+    4. Keep the suggestions diverse (e.g., a mix of physical, social, relaxing, or cultural activities), ensuring they appeal to a wide audience.
+    `;
+    
     const schema = {
         description: "List of activities",
         type: SchemaType.ARRAY,
